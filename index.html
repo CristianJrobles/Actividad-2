@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasifica los Recursos Naturales</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="game-container">
+        <h1>🌍 Recursos Naturales 🌱</h1>
+        <p class="subtitle">¿Renovable o No Renovable?</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+
+        <div class="score-board">
+            <div class="score-item">
+                <div class="score-label">Correctas</div>
+                <span id="correct">0</span>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Incorrectas</div>
+                <span id="incorrect">0</span>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Puntos</div>
+                <span id="points">0</span>
+            </div>
+        </div>
+
+        <div id="game-area">
+            <div class="resource-card">
+                <div class="resource-emoji" id="resource-emoji"></div>
+                <div class="resource-name" id="resource-name"></div>
+                <div class="resource-description" id="resource-description"></div>
+            </div>
+
+            <div class="categories">
+                <button class="category-btn renovable" onclick="checkAnswer('renovable')">
+                    <span>♻️ RENOVABLE<br><small style="font-size: 0.7em;">Se regenera naturalmente</small></span>
+                </button>
+                <button class="category-btn no-renovable" onclick="checkAnswer('no renovable')">
+                    <span>⛏️ NO RENOVABLE<br><small style="font-size: 0.7em;">Cantidad limitada</small></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="game-over" id="game-over">
+            <h2>🎊 ¡Juego Completado! 🎊</h2>
+            <div class="final-score">
+                <div>Respuestas Correctas: <strong id="final-correct">0</strong></div>
+                <div>Respuestas Incorrectas: <strong id="final-incorrect">0</strong></div>
+                <div style="font-size: 1.3em; margin-top: 15px;">Puntuación Total: <strong id="final-points">0</strong> puntos</div>
+            </div>
+            <p style="font-size: 1.3em; margin: 25px 0; color: #555;">
+                ¡Excelente trabajo aprendiendo sobre recursos naturales!
+            </p>
+            <button class="restart-btn" onclick="restartGame()">🔄 Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <div class="feedback-modal" id="feedback-modal">
+        <div class="feedback-content">
+            <div class="feedback-title" id="feedback-title"></div>
+            <div class="feedback-info" id="feedback-info"></div>
+            <div class="feedback-detail" id="feedback-detail"></div>
+        </div>
+    </div>
+
+
+
+     <script src="script.js"></script>
+    
+</body>
+</html>
